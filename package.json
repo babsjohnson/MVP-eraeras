@@ -1,0 +1,48 @@
+{
+  "name": "eraeras",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "server-dev": "npx nodemon --watch server server/index.js",
+    "client-dev": "npx webpack --watch",
+    "build": "npx webpack",
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babsjohnson/MVP-eraeras.git"
+  },
+  "keywords": [
+    "mvp"
+  ],
+  "author": "Gabi Olarte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/babsjohnson/MVP-eraeras/issues"
+  },
+  "homepage": "https://github.com/babsjohnson/MVP-eraeras#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/plugin-syntax-jsx": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.0",
+    "body-parser": "^1.20.1",
+    "file-loader": "^6.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
