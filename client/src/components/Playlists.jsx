@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PlaylistItem from "./PlaylistItem.jsx";
+import {links} from "../assets/playlists.js";
 
 const Playlists = () => {
-  const [playlists , SetPlaylists] = useState([]);
+  const [playlists, setPlaylists] = useState(links);
 
   useEffect(() => {
 
@@ -10,8 +11,10 @@ const Playlists = () => {
 
   return (
     <div>
-      {{playlists.map}}
-      <PlaylistItem />
+      <h2>Playlists</h2>
+    {playlists.map((playlist,  i) => (
+      <PlaylistItem key= {i} playlist={playlist} />
+      ))}
     </div>
   )
 }

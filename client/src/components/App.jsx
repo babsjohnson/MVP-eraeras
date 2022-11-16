@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import  Playlists  from "./Playlists.jsx";
+import  Photos  from "./Photos.jsx";
+import  Home  from "./Home.jsx";
+import  Layout  from "./Layout.jsx";
+
 
 const App = () => {
-  const [ , ] = useState( );
 
-  useEffect(() => {
-
-  }, [])
 
   return (
-    <div>
-      <h2>DA APP</h2>
-      <Playlists />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="photos" element={<Photos />} />
+          <Route path="playlists" element={<Playlists />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
