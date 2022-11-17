@@ -12,7 +12,6 @@ const Playlists = () => {
 
   return (
     <div>
-      <h2>Playlists</h2>
     {playlists.map((playlist,  i) => (
       <PlaylistItem key= {i} playlist={playlist} />
       ))}
