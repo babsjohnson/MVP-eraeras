@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const Container = styled.div`
 display: flex;
 justify-content: center;
-padding: 20px 0px 20px 0px;
-margin: 30px 0px 30px 0px;
+padding: 60px 0px 60px 0px;
+margin: 60px 0px 60px 0px;
 `
 const Card = styled.div`
   width: 1000px;
@@ -13,10 +13,14 @@ const Card = styled.div`
 
 const PhotoItem = ({photo}) => {
 
+  const openFullscreen = () => {
+    document.getElementById('image')?.requestFullscreen()
+  }
+
   return (
     <Container>
       <Card>
-      <img src={photo} width="100%" />
+      <img src={photo} width="100%" onClick={(e) => openFullscreen(target.value)}/>
       </Card>
     </Container>
   )

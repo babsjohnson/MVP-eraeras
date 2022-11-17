@@ -8,7 +8,6 @@ import  Layout  from "./Layout.jsx";
 
 const App = () => {
 
-
   return (
     <BrowserRouter>
       <Routes>

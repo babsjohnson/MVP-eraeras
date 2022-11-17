@@ -20,7 +20,6 @@ const PlaylistItem = ({playlist}) => {
   var source = `https://open.spotify.com/embed/playlist/${extract}utm_source=generator`
 
   return (
-
       <Container>
           <Card>
             <iframe
@@ -33,7 +32,6 @@ const PlaylistItem = ({playlist}) => {
             </iframe>
           </Card>
       </Container>
-
   )
 }
 

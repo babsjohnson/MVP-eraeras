@@ -9,20 +9,27 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
       {
         test: /\.[jt]sx?$/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env",   [
-              "@babel/preset-react",
-              {
-                "runtime": "automatic"
-              }
+            presets: [
+              "@babel/preset-env",
+              [
+                "@babel/preset-react",
+                {
+                  "runtime": "automatic"
+                }
+              ]
             ]
-           ]
           }
         }
       }
