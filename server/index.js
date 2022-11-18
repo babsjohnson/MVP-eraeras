@@ -15,12 +15,16 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, "../client/dist", 'index.html'));
 });
 
-app.get('/photos', mg.getPhotos);
-app.get('/playlists', mg.getPlaylists);
 app.post('/photos', (req, res) => {
-  console.log('body', req.body)
+  mg.getPhotos(req, res)
+});
+
+app.get('/playlists', mg.getPlaylists);
+
+app.post('/photos', (req, res) => {
   mg.addPhoto(req, res)
 });
+
 app.post('/playlists', (req, res) => {
   mg.addPlaylist(req, res)
 });

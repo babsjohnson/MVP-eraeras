@@ -17,7 +17,7 @@ const PlaylistItem = ({playlist}) => {
   let start = playlist.indexOf("list/") + 5;
   let end = playlist.indexOf("si=");
   var extract = playlist.substring(start, end)
-  var source = `https://open.spotify.com/embed/playlist/${extract}utm_source=generator`
+  var source = `https://open.spotify.com/embed/playlist/${extract}utm_source=generator&theme=0`
 
   return (
       <Container>

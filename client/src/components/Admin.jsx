@@ -1,19 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import home from '../assets/home.png';
+import { Link } from 'react-router-dom';
 
-const StyledDiv = styled.div`
-display: flex;
-justify-content: center;
-// padding: 20px 0px 20px 0px;
-// margin: 30px 0px 30px 0px;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
-const Form = styled.div`
-display: flex;
-justify-content: center;
-// padding: 20px 0px 20px 0px;
-// margin: 30px 0px 30px 0px;
+const H2 = styled.h2`
+  color: whitesmoke;
+  font-weight: bold;
+`
+const Button = styled.button`
+  font-weight: bold;
+  background: whitesmoke;
+  border: none;
+  color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 5px 10px 18px black;
+  opacity: 80%
+`
+const Img = styled.img`
+  opacity: 80%;
+  margin: 30px 0 20px 0;
 `
 
 const Admin = () => {
@@ -35,42 +47,49 @@ const Admin = () => {
     e.preventDefault();
     console.log("clicked")
     axios.post('/photos', photo)
-    .then(() => console.log("posted"))
-    .catch((err) => console.log(err))
   }
+
   const submitPlaylist = (e) => {
     e.preventDefault();
     axios.post('/playlists', playlist)
   }
 
-  useEffect(() => {
 
-  }, [])
 
   return (
     <div>
-      <div>
-        <h1>Add Photo</h1>
+      <Wrapper>
+        <H2>Add Photo</H2>
+
         <form onSubmit={(e)=> submitPhoto(e)}>
-        <label htmlFor="img_url">Image Url:</label>
+        <label htmlFor="img_url"><h5>Image Url:</h5></label>
+
         <input  type="text" id="img_url"
-        required value={img_url} onChange={e=>setImg_url(e.target.value)}/>
-        <label htmlFor="tag">Image Tag:</label>
+          required value={img_url} onChange={e=>setImg_url(e.target.value)}/>
+
+        <label htmlFor="tag"><h5>Image Tag:</h5></label>
         <input  type="text" id="tag" value={tag} onChange={e=>setTag(e.target.value)}/>
-        <button type='submit'>Submit</button>
+        <div>
+        <br></br>
+        <Button type='submit'>SUBMIT</Button>
+        </div>
         </form>
-      </div>
-      <div>
-        <h1>Add Playlist</h1>
-        {/* <form onSubmit={(e)=> submitPlaylist(e)}>
-        <label htmlFor="URL">Spotify Url:</label>
+
+        <H2>Add Playlist</H2>
+
+        <form onSubmit={(e)=> submitPlaylist(e)}>
+        <label htmlFor="url"><h5>Spotify Url:</h5></label>
         <input  type="text" id="url"
           required value={url} onChange={e=>setUrl(e.target.value)}/>
-        <label htmlFor="name">Playlist Name:</label>
-        <input  type="text" id="name" value={lastName} onChange={e=>setName(e.target.value)}/>
-        <button type='submit'>Submit</button>
-        </form> */}
-      </div>
+        <label htmlFor="name"><h5>Playlist Name:</h5></label>
+        <input  type="text" id="name" value={name} onChange={e=>setName(e.target.value)}/>
+        <div>
+          <br></br>
+        <Button type='submit'>SUBMIT</Button>
+        </div>
+        </form>
+        <Link to="/"><Img src={home} alt="home-button" width="50px" /></Link>
+      </Wrapper>
     </div>
   )
 }

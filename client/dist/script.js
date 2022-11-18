@@ -12,14 +12,14 @@ var hydra = new Hydra({
 // by Rangga Purnama Aji
 // https://ranggapurnamaaji1.wixsite.com/portfolio
 
-shape(1,1)
-  .mult(voronoi(1000,2)
-  .blend(o0).luma())
-  .add(shape(3,0.125)
-       .rotate(1,1).mult(voronoi(1000,1).luma())
-       .rotate(1.5)).scrollX([0.1,-0.0625,0.005,0.00001],0)
-  .scrollY([0.1,-0.0625,0.005,0.00001],0)
-  .out()
+// shape(1,1)
+//   .mult(voronoi(1000,2)
+//   .blend(o0).luma())
+//   .add(shape(3,0.125)
+//        .rotate(1,1).mult(voronoi(1000,1).luma())
+//        .rotate(1.5)).scrollX([0.1,-0.0625,0.005,0.00001],0)
+//   .scrollY([0.1,-0.0625,0.005,0.00001],0)
+//   .out()
 
 // licensed with CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
 // by Rangga Purnama Aji
@@ -40,13 +40,13 @@ shape(1,1)
 
 	//GREY VERTICAL
   osc(5, .1)
-	.modulate(noise(6), .22)
+	.modulate(noise(9), .22)
 	.diff(o0)
 	.modulateScrollY(osc(2)
 		.modulate(osc()
 			.rotate(), .11))
 	.scale(0.429)
-	.color(1, 1, 1)
+	.color(1,1,1)
 	.scale(1, () => window.innerHeight/window.innerWidth)
 	.out();
 

@@ -24,14 +24,27 @@ canvas {
 
 h1 {
   font-style: italic;
-  color: #ffffff;
+  color: whitesmoke;
+}
+
+h2 {
+  color: whitesmoke;
+}
+
+h5 {
+  color: whitesmoke;
 }
 
 img {
   filter: grayscale(100%);
 }
 
+img.to-white {
+  fill: whitesmoke;
+}
+
 img:hover {
   filter: none;
   transition: all 0.5s ease;
 }
+

@@ -1,15 +1,19 @@
 const { Photo, Playlist } = require('./db.js');
 
-exports.getPhotos = async (req, res) => {
-  const photos = await Photo.find({});
-  res.send(photos)
+exports.getPhotos = (req, res) => {
+  console.log("in get photos");
+  return Photo.find({}).exec()
+  .then((data) => {
+    res.send(data)
+  })
 }
 exports.getPlaylists = async (req, res) => {
   const playlists = await Playlist.find({});
-  res.send(playlists)
+  console.log(playlists.data);
+  res.send(res)
 }
-exports.addPhotos = async (req, res) => {
-  const addPhoto = new Photo ({...req.body});
+exports.addPhoto = (req, res) => {
+  Photo.insertMany(req.body)
   res.send()
 }
 exports.addPlaylist = async (req, res) => {
